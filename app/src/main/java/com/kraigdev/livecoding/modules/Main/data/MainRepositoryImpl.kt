@@ -16,10 +16,10 @@ class MainRepositoryImpl @Inject constructor(
 
         if (response.isSuccessful) {
             response.body()?.let {
-                emit(it.toModel())
+                emit(MainModel(categoryList = it))
             }
         } else {
-            MainModel(categoryList = listOf())
+            emit(MainModel(categoryList = listOf()))
         }
     }
 }

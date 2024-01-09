@@ -7,5 +7,5 @@ import retrofit2.http.GET
 fun interface MainApi {
 
     @GET("categories")
-    fun getCategories(): Response<MainResponse>
+    suspend fun getCategories(): Response<List<String>>
 }
